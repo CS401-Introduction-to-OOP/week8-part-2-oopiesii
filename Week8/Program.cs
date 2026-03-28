@@ -1,18 +1,21 @@
 ﻿using System;
-namespace two;
+namespace three;
 class Program
 {
     public static void Main()
     {
-        FileResource file = new FileResource("report.txt");
-        NetworkResource network = new NetworkResource("api.company.local");
-        ResourceManager<Resource> manager = new ResourceManager<Resource>();
-        manager.Add(network);
-        manager.Add(file);
-        manager.OpenAll();
-        file.Dispose();
-        manager.CloseAll();
-        Console.WriteLine("Done.");
+        Point p1 = new Point { X = 1, Y = 2 };
+        Point p2 = p1;
+        p2 = new Point { X = 100, Y = 200 };
+        p1.Print();
+        p2.Print();
+        PointRef r1 = new PointRef { X = 1, Y = 2 };
+        PointRef r2 = r1;
+        r2 = new PointRef { X = 1000, Y = 20 };
+        r1.Print();
+        r2.Print();
+        
+        BoxingTester.Test();
     }
     
 }
