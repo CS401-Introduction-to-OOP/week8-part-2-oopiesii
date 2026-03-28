@@ -18,5 +18,7 @@ class FileResource : Resource, IDisposable
     public void Dispose()
     {
         Close();
+        Console.WriteLine("File is disposed.");
+
     }
 }
